@@ -1,21 +1,22 @@
-name: CI workflow
+name: CI Workflow
 
 on:
   push:
     branches:
-      -main
+      - main
   pull_request:
     branches:
-      -main
+      - main
+
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout code
+    - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: setup python
+    - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.9'
@@ -27,4 +28,4 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest _test.py                   
+        pytest _test.py
